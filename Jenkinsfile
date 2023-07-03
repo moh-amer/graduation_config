@@ -12,16 +12,10 @@ node('kube-agent') {
                     poll: true
                 )
              }
-        
                   stage("Deploy the app") {
                       
                      sh "kubectl apply -f ."
              }
-
-             stage('Get Job Name') {
-                sh "echo 'Job Name: ${env.JOB_BASE_NAME}'"
-        }
-        
         }
     }
 }
