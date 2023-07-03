@@ -17,6 +17,13 @@ node('kube-agent') {
                       
                      sh "kubectl apply -f ."
              }
+
+             stage('Get Job Name') {
+            steps {
+                echo "Job Name: ${env.JOB_BASE_NAME}"
+            }
+        }
+        
         }
     }
 }
