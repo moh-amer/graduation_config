@@ -19,9 +19,7 @@ node('kube-agent') {
              }
 
              stage('Get Job Name') {
-            steps {
-                echo "Job Name: ${env.JOB_BASE_NAME}"
-            }
+                sh "echo 'Job Name: ${env.JOB_BASE_NAME}'"
         }
         
         }
